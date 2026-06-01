@@ -34,7 +34,7 @@ const socialLinks = [
   {
     icon: <Github size={24} />,
     label: "GitHub",
-    href: "https://github.com/STROM6532",
+    href: "https://github.com/animesh6532",
     color: "accent",
   },
 ];

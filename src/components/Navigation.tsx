@@ -83,7 +83,7 @@ const Navigation = () => {
             <div className="flex items-center gap-4">
               <div className="hidden sm:flex items-center gap-3">
                 <motion.a
-                  href="https://github.com/STROM6532"
+                  href="https://github.com/animesh6532"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 text-muted-foreground hover:text-primary transition-colors"
@@ -158,7 +158,7 @@ const Navigation = () => {
                 ))}
                 <div className="flex gap-4 pt-8 border-t border-border mt-4">
                   <a
-                    href="https://github.com/STROM6532"
+                    href="https://github.com/animesh6532"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 text-muted-foreground hover:text-primary"

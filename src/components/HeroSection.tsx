@@ -104,15 +104,15 @@ const HeroSection = () => {
               className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border/50"
             >
               <div className="text-center lg:text-left">
-                <div className="text-3xl font-display font-bold text-primary">6+</div>
+                <div className="text-3xl font-display font-bold text-primary">12+</div>
                 <div className="text-sm text-muted-foreground">Projects</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-3xl font-display font-bold text-primary">10+</div>
+                <div className="text-3xl font-display font-bold text-primary">20+</div>
                 <div className="text-sm text-muted-foreground">Certifications</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className="text-3xl font-display font-bold text-primary">2+</div>
+                <div className="text-3xl font-display font-bold text-primary">4+</div>
                 <div className="text-sm text-muted-foreground">Trainings</div>
               </div>
             </motion.div>

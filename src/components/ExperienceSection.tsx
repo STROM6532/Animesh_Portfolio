@@ -6,21 +6,44 @@ import { Briefcase, Trophy, Users, Lightbulb, Target, Zap } from "lucide-react";
 const experiences = [
   {
     id: 1,
+    title: "Artificial Intelligence & Machine Learning Intern",
+    organization: "Kodacy × SPACE (Virtual)",
+    duration: "Feb 2026 – Mar 2026",
+    description:
+      "Built a Stock Price Prediction model using Python and Scikit-learn. Applied data preprocessing, feature engineering, and visualization using Pandas, NumPy, and Matplotlib.",
+    icon: "📈",
+    type: "internship",
+  },
+  {
+    id: 2,
+    title: "Data Analytics Intern",
+    organization: "Bluestock Fintech",
+    duration: "May 2026 – Present",
+    description:
+      "Engineered an AI-powered NIFTY100 Financial Intelligence Platform integrating PostgreSQL, Django, Machine Learning, and Power BI. Delivered interactive financial dashboards, anomaly detection, forecasting, and company health scoring to generate actionable business insights.",
+    icon: "📊",
+    type: "internship",
+  },
+  {
+    id: 3,
     title: "Artificial Intelligence Training",
     organization: "Samsung Innovation Campus",
-    description: "Comprehensive AI training program covering fundamentals to advanced concepts in artificial intelligence and machine learning.",
+    duration: "2025",
+    description:
+      "Completed comprehensive training in Artificial Intelligence and Machine Learning, covering core concepts, model development, data analysis, and practical AI applications.",
     icon: "🤖",
     type: "training",
   },
   {
-    id: 2,
+    id: 4,
     title: "Blockchain, Big Data & Data Science Internship",
     organization: "NIELIT Kolkata",
-    description: "Hands-on internship experience working with blockchain technology, big data processing, and data science methodologies.",
+    duration: "2025",
+    description:
+      "Completed hands-on training and internship experience in Blockchain Technology, Big Data Analytics, and Data Science methodologies with real-world applications.",
     icon: "⛓️",
     type: "internship",
   },
-
 ];
 
 const achievements = [

@@ -28,7 +28,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <motion.a
-              href="https://github.com/STROM6532"
+              href="https://github.com/animesh6532"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-xl bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
