@@ -1,187 +1,90 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Phone, MapPin, Linkedin, Github, Send, Download } from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: <Mail size={24} />,
-    label: "Email",
-    value: "animeshsahoo451@gmail.com",
-    href: "mailto:animeshsahoo451@gmail.com",
-  },
-  {
-    icon: <Phone size={24} />,
-    label: "Phone",
-    value: "+91 8250986973",
-    href: "tel:+918250986973",
-  },
-  {
-    icon: <MapPin size={24} />,
-    label: "Location",
-    value: "Tamluk, West Bengal, India",
-    href: null,
-  },
-];
-
-const socialLinks = [
-  {
-    icon: <Linkedin size={24} />,
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/animesh-sahoo-b03151302",
-    color: "primary",
-  },
-  {
-    icon: <Github size={24} />,
-    label: "GitHub",
-    href: "https://github.com/animesh6532",
-    color: "accent",
-  },
-];
+import { Mail, Github, Linkedin, Download, MapPin, Send } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 particle-grid opacity-20" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-96 bg-primary/5 rounded-full blur-3xl" />
+    <section id="contact" className="relative overflow-hidden bg-transparent">
+      {/* Background blobs */}
+      <div className="absolute bottom-[8%] left-[12%] w-[420px] h-[420px] rounded-full bg-sky-200/20 blur-[120px] -z-10 animate-blob-float" />
 
-      <div ref={ref} className="section-container relative z-10">
-        {/* Section Header */}
+      <div ref={ref} className="section-container">
+        
+        {/* Large Glass Card final CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.05 }}
+          className="glass-card rounded-2xl p-8 md:p-14 text-center space-y-8 border border-white/50 shadow-xl relative overflow-hidden"
         >
-          <h2 className="section-title">Get In Touch</h2>
-          <p className="section-subtitle mx-auto">
-            Let's connect and explore opportunities together
-          </p>
+          {/* Subtle reflection overlay */}
+          <div className="absolute inset-0 bg-linear-to-tr from-white/0 via-white/5 to-white/10 opacity-60 pointer-events-none" />
+
+          <div className="space-y-4 relative z-10">
+            <span className="text-[10px] font-bold text-sky-600 uppercase tracking-widest block">
+              Contact
+            </span>
+            <h3 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter leading-[1.05] text-gray-900 text-balance max-w-3xl mx-auto">
+              Let's Build Something Meaningful Together.
+            </h3>
+            <p className="text-base sm:text-lg text-gray-500 font-medium max-w-xl mx-auto text-balance">
+              Open to internships, collaborations, and exciting software engineering opportunities.
+            </p>
+          </div>
+
+          {/* Location detail */}
+          <div className="flex items-center justify-center gap-1.5 text-xs text-gray-400 font-medium relative z-10">
+            <MapPin size={14} className="text-sky-500" />
+            <span>Tamluk, West Bengal, India</span>
+          </div>
+
+          {/* Action Row */}
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-4 relative z-10">
+            <a
+              href="mailto:animeshsahoo451@gmail.com"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 hover:shadow-lg hover:shadow-sky-500/10 hover:-translate-y-1 hover:opacity-95 text-white text-xs font-bold transition-all duration-200"
+            >
+              <Send size={14} />
+              <span>Email Me</span>
+            </a>
+
+            <a
+              href="/documents/ANIMESH_SAHOO_Resume.pdf"
+              download="Animesh_Sahoo_Resume.pdf"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 bg-white hover:bg-gray-50 hover:-translate-y-1 hover:shadow-lg text-gray-700 text-xs font-bold transition-all duration-200"
+            >
+              <Download size={14} />
+              <span>Download Resume</span>
+            </a>
+
+            <div className="flex items-center gap-2 sm:pl-2">
+              <a
+                href="https://github.com/animesh6532"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 text-gray-400 hover:text-sky-600 bg-white/50 border border-gray-200/50 rounded-full hover:bg-white/95 transition-all"
+                title="GitHub"
+              >
+                <Github size={16} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/animesh-sahoo-b03151302"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 text-gray-400 hover:text-sky-600 bg-white/50 border border-gray-200/50 rounded-full hover:bg-white/95 transition-all"
+                title="LinkedIn"
+              >
+                <Linkedin size={16} />
+              </a>
+            </div>
+          </div>
+
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Main Contact Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card p-8 md:p-12 relative overflow-hidden"
-          >
-            {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl" />
-
-            <div className="relative z-10">
-              {/* Contact Info Grid */}
-              <div className="grid md:grid-cols-3 gap-6 mb-10">
-                {contactInfo.map((info, index) => (
-                  <motion.div
-                    key={info.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                    className="text-center"
-                  >
-                    {info.href ? (
-                      <a
-                        href={info.href}
-                        className="group block"
-                      >
-                        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-3 text-primary group-hover:bg-primary group-hover:text-background transition-all duration-300 group-hover:scale-110">
-                          {info.icon}
-                        </div>
-                        <p className="text-sm text-muted-foreground mb-1">
-                          {info.label}
-                        </p>
-                        <p className="font-medium text-foreground group-hover:text-primary transition-colors break-all">
-                          {info.value}
-                        </p>
-                      </a>
-                    ) : (
-                      <div>
-                        <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-3 text-primary">
-                          {info.icon}
-                        </div>
-                        <p className="text-sm text-muted-foreground mb-1">
-                          {info.label}
-                        </p>
-                        <p className="font-medium text-foreground">
-                          {info.value}
-                        </p>
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Divider */}
-              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-10" />
-
-              {/* Social Links */}
-              <div className="flex flex-wrap justify-center gap-4 mb-10">
-                {socialLinks.map((link, index) => (
-                  <motion.a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.5 + index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-xl ${
-                      link.color === "primary"
-                        ? "bg-primary/10 text-primary hover:bg-primary hover:text-background"
-                        : "bg-accent/10 text-accent hover:bg-accent hover:text-background"
-                    } transition-all duration-300 font-medium`}
-                  >
-                    {link.icon}
-                    {link.label}
-                  </motion.a>
-                ))}
-              </div>
-
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.7 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-              >
-                <a
-                  href="mailto:animeshsahoo451@gmail.com"
-                  className="btn-hero flex items-center justify-center gap-2"
-                >
-                  <Send size={20} />
-                  Send Email
-                </a>
-                <a
-                  href="/documents/ANIMESH_SAHOO_Resume.pdf"
-                  download
-                  className="btn-outline-hero flex items-center justify-center gap-2"
-                >
-                  <Download size={20} />
-                  Download Resume
-                </a>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Footer Note */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.9 }}
-            className="text-center text-sm text-muted-foreground mt-8"
-          >
-            Open to AI/ML internships, entry-level positions, and collaborative projects
-          </motion.p>
-        </div>
       </div>
     </section>
   );
