@@ -56,9 +56,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "neuro-path-ai",
     title: "NeuroPath AI",
-    tagline: "AI-Powered Career Guidance & Interview Platform",
-    overview: "An intelligent platform designed to streamline interview preparation and career mapping. It automatically parses resumes, conducts mock interview simulations using conversational AI agents, scores candidate metrics, and dynamically constructs learning roadmaps to close talent skill gaps.",
-    problem: "Standard career guidance tools rely on generic questionnaires, leading to outdated, non-personalized advice. Meanwhile, candidates struggle to practice for interviews in realistic environments that test their specific skill profile and offer immediate feedback.",
+    tagline: "AI-powered interview simulator and skill gap analyzer",
+    overview: "An application that helps candidates prepare for technical interviews. It parses resume text, runs interactive mock interviews using conversational LLM agents, and generates personalized learning plans based on identified skill gaps.",
+    problem: "Generic mock interview sites rely on static questions and fail to give constructive feedback. Candidates need realistic, interactive practice tailored to their specific resume and target job descriptions.",
     objectives: [
       "Deliver realistic conversational AI interview simulations.",
       "Analyze resumes automatically against custom job descriptions.",
@@ -85,8 +85,8 @@ export const projectsData: ProjectData[] = [
       "AI interviewer agent queries candidate based on detected gaps.",
       "Symptom-checking engine compiles transcripts and logs score parameters."
     ],
-    challenges: "Handling real-time low-latency response cycles for voice-based interviews while scoring transcripts on the fly without breaking conversational flow.",
-    solutions: "Implemented an asynchronous chunk-based queue processing model in FastAPI, separating transcript generation from evaluations and routing through a caching layer.",
+    challenges: "Keeping the conversation flowing naturally without long API wait times during the interview simulation.",
+    solutions: "Designed an asynchronous query pipeline in FastAPI that separates speech-to-text conversion from the heavier LLM scoring tasks.",
     databaseDesign: {
       tables: [
         {
@@ -166,9 +166,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "startupforge-ai",
     title: "StartupForge AI",
-    tagline: "Multi-Agent Startup Intelligence Platform",
-    overview: "An agentic system coordinating multiple specialized LLM agents to research market viability, automate competitive indexes, draft financial spreadsheets, and format pitch materials for early-stage ventures.",
-    problem: "Founders spend hundreds of hours researching competitors, detailing addressable market size (TAM/SAM/SOM), and drafting product timelines. Traditional analysis methods are fragmented and lack mathematical synchronization.",
+    tagline: "Multi-agent research and financial planning coordinator",
+    overview: "A tool that coordinates specialized AI agents to research market viability, analyze competitors, and outline financial projections for early-stage startup ideas.",
+    problem: "Conducting early market research is time-consuming and manual. Founders need a quick, unified way to validate business assumptions, estimate market sizes, and organize competitor data.",
     objectives: [
       "Orchestrate a team of agents (Market Researcher, Financial Planner, Pitch Writer) using LangGraph.",
       "Automate data gathering from web indices to map active competitors.",
@@ -194,8 +194,8 @@ export const projectsData: ProjectData[] = [
       "Financial agents synthesize budget and timeline metrics.",
       "Writer agent models pitch documents and formats business boards."
     ],
-    challenges: "Preventing loop-locks and hallucinations where agents trigger circular search tasks without outputting concrete summaries.",
-    solutions: "Structured explicit state machines with boundary rules and validation schemas that terminate search loops once required metrics are acquired.",
+    challenges: "Preventing AI agents from getting stuck in infinite search loops or returning repetitive market data.",
+    solutions: "Built strict state transitions using LangGraph, defining clear entry and exit conditions for each agent's execution phase.",
     databaseDesign: {
       tables: [
         {
@@ -266,9 +266,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "nextwin-ai",
     title: "NexTwin AI",
-    tagline: "Industrial Digital Twin Platform",
-    overview: "A sophisticated mechanical intelligence suite that aggregates real-time industrial telemetry, models structural machine wear, and alerts maintenance operators to anomalies prior to equipment degradation.",
-    problem: "Sudden mechanical failure costs assembly lines billions in downtime. Standard threshold alerts trigger too late, failing to isolate component wear anomalies until breakdown occurs.",
+    tagline: "IoT telemetry pipeline and predictive maintenance dashboard",
+    overview: "An IoT pipeline that processes real-time industrial sensor telemetry, tracks equipment performance metrics, and flags operational anomalies before mechanical failures occur.",
+    problem: "Relying on simple threshold alerts often means warning signs are missed until a machine is already failing. Industrial operators need proactive, anomaly-based predictive alerts.",
     objectives: [
       "Parse and stream sensor parameters at high frequencies (50Hz).",
       "Model degradation indexes across key moving components (bearings, pistons).",
@@ -294,8 +294,8 @@ export const projectsData: ProjectData[] = [
       "ML pipelines continuously score sensor vectors using LSTM autoencoders.",
       "Dashboard triggers popups when anomaly parameters drift from nominal baselines."
     ],
-    challenges: "Ingesting and processing millions of sensor values from multiple telemetry nodes in real-time without locking database transactions.",
-    solutions: "Structured a split ingestion model leveraging Redis queue buffers to queue incoming streams before writing records to InfluxDB in micro-batches.",
+    challenges: "Processing high-frequency WebSockets sensor data without causing database write bottlenecks.",
+    solutions: "Used Redis to buffer incoming telemetry packets, then wrote them to InfluxDB in optimized micro-batches.",
     databaseDesign: {
       tables: [
         {
@@ -353,9 +353,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "xe-commerce",
     title: "XE-Commerce",
-    tagline: "Next-Gen E-Commerce Suite",
-    overview: "A highly scalable digital commerce system incorporating real-time inventory updates, machine learning recommendation lists, shopping trends, and user transaction dashboards.",
-    problem: "E-Commerce websites suffer from slow product rendering times, poor recommending engines that show unrelated products, and high basket abandonment rates due to clunky checkouts.",
+    tagline: "E-commerce platform with recommendation engine and cache layers",
+    overview: "A responsive e-commerce web app featuring dynamic inventory management, user cart verification, and similarity-based product recommendation widgets.",
+    problem: "Slow page transitions and irrelevant product suggestions hurt user retention. E-commerce sites require fast listing loads and reliable cart updates.",
     objectives: [
       "Develop a high-speed web checkout with under-2s loading benchmarks.",
       "Embed collaborative filtering recommendation modules.",
@@ -381,8 +381,8 @@ export const projectsData: ProjectData[] = [
       "Stripe checkout simulation handles token validation and registers state.",
       "Warehouse status notifications alert product controllers."
     ],
-    challenges: "Ensuring inventory counts do not result in over-allocation or race conditions during flash sales when multiple users pay at the same millisecond.",
-    solutions: "Employed pessimistic locking strategies and atomic decrement queries in MongoDB database operations to reject orders exceeding physical limits.",
+    challenges: "Preventing inventory double-booking when multiple users check out identical items at the same millisecond.",
+    solutions: "Used database transaction locks and atomic inventory updates in MongoDB to reject orders exceeding available stock.",
     databaseDesign: {
       tables: [
         {
@@ -449,9 +449,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "carebot-plus",
     title: "CareBot+",
-    tagline: "Privacy-First AI Healthcare Assistant",
-    overview: "A secure medical companion incorporating local LLM parsing to execute private symptom evaluation, schedule diagnostic timelines, and map nearby clinical centers.",
-    problem: "Users seeking healthcare details struggle with search queries that broadcast sensitive personal symptoms to commercial advertising trackers, breaching data privacy standard protocols.",
+    tagline: "Privacy-focused medical information assistant with local PII filtering",
+    overview: "An AI helper that answers health-related questions. It strips out personally identifiable information locally before sending queries to LLM APIs, ensuring user data privacy.",
+    problem: "Typing symptoms into search engines often shares sensitive personal health information with third-party tracking networks.",
     objectives: [
       "Compile a privacy-focused chat interface routing inputs through sanitized filters.",
       "Generate relative medical tags using contextual NLP classifiers.",
@@ -477,8 +477,8 @@ export const projectsData: ProjectData[] = [
       "Sanitized inputs query Gemini AI with specialized medical prompt constraints.",
       "CareBot returns potential alerts and maps clinical locations."
     ],
-    challenges: "Providing reliable health information while protecting against medical liability and avoiding incorrect diagnosises.",
-    solutions: "Engineered strict prompt boundaries that prefix outputs with structured medical disclaimers and redirect candidates to local emergency phone triggers when high-alert symptoms occur.",
+    challenges: "Providing helpful health information without making medical claims or causing user anxiety.",
+    solutions: "Wrote strict system instructions to enforce clear disclaimers and coded filters that flag emergency keywords to suggest direct emergency services.",
     databaseDesign: {
       tables: [
         {
@@ -534,9 +534,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "fraud-detect",
     title: "Fraud Detect",
-    tagline: "AI-Powered Fraud Intelligence Platform",
-    overview: "An enterprise-grade transaction auditing dashboard aggregating transaction records, computing dynamic risk factors, and managing investigator review queues.",
-    problem: "Payment processing streams ingest millions of items hourly. Financial investigators lack unified review boards to inspect transaction anomalies in real-time before payments clear.",
+    tagline: "Transaction risk scoring pipeline and dashboard",
+    overview: "A transaction monitoring dashboard that analyzes payment records, computes risk flags using machine learning, and structures an investigation queue.",
+    problem: "High transaction volumes make manual verification impossible. Fraud teams need a fast, automated way to flag suspicious activity for review.",
     objectives: [
       "Compute risk probabilities on payment events within milliseconds.",
       "Generate modular anomaly matrices based on user spending locations.",
@@ -562,8 +562,8 @@ export const projectsData: ProjectData[] = [
       "Suspicious logs get labeled and queued onto the inspection board.",
       "Managers review and release or lock the payment profiles."
     ],
-    challenges: "Balancing high accuracy in fraud detection with low false positive rates to avoid locking accounts of legitimate users.",
-    solutions: "Constructed dual-tier validation routing where transactions are graded by localized individual user rules before querying the general ML model.",
+    challenges: "Minimizing false positives to avoid blocking normal user accounts while maintaining high fraud detection rates.",
+    solutions: "Built a dual-tier check that evaluates user-specific spending history before running the more generalized isolation forest model.",
     databaseDesign: {
       tables: [
         {
@@ -617,9 +617,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "visioncart-ai",
     title: "VisionCart AI",
-    tagline: "Product Recognition & Intelligent Shelf Optimization",
-    overview: "A computer vision model that automates stock inventory counting and shelf optimization using edge product recognition, real-time object tracking, and automatic category tags labeling.",
-    problem: "Retail managers manually audit stock items, leading to high counts errors, empty retail shelves, and slow shelf replenishment cycles.",
+    tagline: "Real-time retail shelf product recognition using YOLOv8",
+    overview: "A computer vision project that monitors retail shelf stock. It processes video feeds using YOLOv8 to identify items, calculate stock levels, and alert managers when shelves are empty.",
+    problem: "Manual shelf auditing is slow and inaccurate, leading to stockouts and delayed inventory updates.",
     objectives: [
       "Implement real-time product boundary categorization grids.",
       "Calculate stock quantities from live retail camera streams.",
@@ -645,8 +645,8 @@ export const projectsData: ProjectData[] = [
       "Inventory databases update items metrics based on calculated box counts.",
       "Visual panels notify clerks when shelf capacities drop below target ratios."
     ],
-    challenges: "Overlapping objects and poor lighting conditions in retail stores leading to incorrect classification indexes.",
-    solutions: "Leveraged spatial tracking to count items based on depth factors and augmented training datasets with severe lighting shifts.",
+    challenges: "Accurately identifying products when they overlap or are placed in poorly lit corners of a shelf.",
+    solutions: "Augmented the training dataset with lighting and rotation variations, and implemented tracking algorithms to count items by location.",
     databaseDesign: {
       tables: [
         {
@@ -707,9 +707,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "nifty100-financial-analytics",
     title: "NIFTY100 Financial Analytics Dashboard",
-    tagline: "Enterprise-Grade Financial Analytics Platform",
-    overview: "A robust financial system aggregating market indicators for the NIFTY100 indices, integrating relational schema architectures and interactive Power BI dashboards.",
-    problem: "Financial analysts query indexes through scattered APIs, leading to slow comparative calculations and lack of unified trend analytics panels for executive reviews.",
+    tagline: "PostgreSQL warehouse and Power BI dashboard for NIFTY100 index data",
+    overview: "A database warehouse and dashboard that scrapes daily closing prices for NIFTY100 companies, structures the data in PostgreSQL, and displays historical market trends.",
+    problem: "Scraping stock data from multiple API endpoints makes tracking market performance slow. Financial teams need a single source of truth for historical comparisons.",
     objectives: [
       "Create relational structures organizing stock tickers and market variables.",
       "Formulate interactive analytical dashboard views.",
@@ -735,8 +735,8 @@ export const projectsData: ProjectData[] = [
       "Power BI schemas consume the database views to update charts.",
       "Analysts utilize interactive cards to filter out volatility variables."
     ],
-    challenges: "Handling stock split adjustments and missing ticker logs in the database tables without distorting historical trend lines.",
-    solutions: "Engineered normalization triggers in SQL that check corporate events indexes and recalculate historical coefficients automatically.",
+    challenges: "Preventing stock splits or missing data points from skewing historical trend charts.",
+    solutions: "Wrote database normalization scripts that adjust close prices retroactively based on known corporate event lists.",
     databaseDesign: {
       tables: [
         {
@@ -798,9 +798,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "mutual-fund-intelligence",
     title: "Mutual Fund Industry Intelligence Dashboard",
-    tagline: "Power BI Executive Dashboard",
-    overview: "An executive-grade analytical portal visualizing market share analytics, asset allocation indices, and compounding metrics across mutual fund houses.",
-    problem: "Fund houses manage assets across multiple asset classes (equity, debt, hybrid). Executive boards lack consolidated business dashboards tracking market share shifts and net inflow changes.",
+    tagline: "Market share and AUM tracking dashboard for mutual fund houses",
+    overview: "A Power BI dashboard that aggregates mutual fund reports to track asset distributions, AUM growth, and market share across different fund categories.",
+    problem: "Mutual fund reports are released in varied, non-standardized formats. Analysts need a consolidated view of AUM flows and growth trends.",
     objectives: [
       "Structure multi-dimensional star schemas connecting fund indicators.",
       "Formulate interactive Power BI panels demonstrating AUM distributions.",
@@ -825,8 +825,8 @@ export const projectsData: ProjectData[] = [
       "DAX calculations compute rolling averages and growth ratios.",
       "Power BI renders interactive maps and lists detailing market shares."
     ],
-    challenges: "Standardizing different report schemas from multiple fund organizations into a single warehouse model.",
-    solutions: "Formulated automated Python pre-processors that parse inbound reports, translate headers to standardized keys, and write records to SQL tables.",
+    challenges: "Mapping inconsistently formatted raw excel spreadsheets from different fund houses into a unified database schema.",
+    solutions: "Created a Python pipeline that automatically standardizes file headers and parses raw figures before inserting them into a SQL database.",
     databaseDesign: {
       tables: [
         {
@@ -885,9 +885,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "mindhaven",
     title: "MindHaven",
-    tagline: "Mental Health Support & Mood Tracking Platform",
-    overview: "A compassionate, secure mental wellness tracker incorporating interactive mood analytics, therapy session loggers, and personalized stress-relief exercises.",
-    problem: "Standard mental wellness trackers offer basic calendar logs without compiling emotional sentiment indicators or helping users identify stressors in their daily routines.",
+    tagline: "Secure mood logger and emotional trend tracker",
+    overview: "A wellness application that helps users track their daily mood, journal their thoughts, and view visual charts of their emotional trends over time.",
+    problem: "Basic journal apps don't offer visual indicators or help users correlate their daily habits (e.g. sleep, work) with their overall mood.",
     objectives: [
       "Implement secure mood logging checklists.",
       "Render sentiment charts evaluating emotional shifts.",
@@ -912,8 +912,8 @@ export const projectsData: ProjectData[] = [
       "Dashboard charts display weekly stress indexes fluctuations.",
       "Care modules suggest customized breathing patterns and logs."
     ],
-    challenges: "Formulating mental health tools while ensuring user data privacy and absolute compliance with medical storage standards.",
-    solutions: "Deployed local client-side encryption modules that write scrambled texts to databases, ensuring only the owner holding keys can decrypt diary contents.",
+    challenges: "Securing user journal entries so that private thoughts cannot be leaked or accessed by administrators.",
+    solutions: "Implemented AES-256 client-side encryption, ensuring only the logged-in user can decrypt and view their journal records.",
     databaseDesign: {
       tables: [
         {
@@ -976,9 +976,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "stock-price-prediction",
     title: "Stock Price Prediction & Market Analysis Dashboard",
-    tagline: "Time-Series Stock Forecasting Dashboard",
-    overview: "A time-series analytical engine evaluating market pricing movements and forecasting asset valuations using regression algorithms and interactive pricing graphs.",
-    problem: "Stock markets are highly volatile. Static charts fail to show projected price boundaries or help analysts evaluate prediction variances over multi-month windows.",
+    tagline: "Time-series predictive models and regression visualization",
+    overview: "A predictive modeling project that trains machine learning regression algorithms on historical stock prices and visualizes forecasted price movements.",
+    problem: "Analyzing stock trends with static charts makes it hard to compare model forecasts against actual market paths side-by-side.",
     objectives: [
       "Program clean feature engineering scripts compiling historical stock values.",
       "Deploy forecasting pipelines utilizing regression algorithms.",
@@ -1004,8 +1004,8 @@ export const projectsData: ProjectData[] = [
       "Machine learning regression models project prices across 30-day horizons.",
       "Web charts graph price pathways alongside error confidence envelopes."
     ],
-    challenges: "Minimizing lag in forecasting results caused by sudden economic news shifts that regression models cannot anticipate.",
-    solutions: "Integrated structural macro-economic metrics as auxiliary parameters and adjusted training weight distributions to favor recent pricing intervals.",
+    challenges: "Reducing forecast lag caused by sudden economic news events that historical price data doesn't reflect.",
+    solutions: "Factored in broad market volatility indicators as secondary parameters and trained models with higher weights on recent trading periods.",
     databaseDesign: {
       tables: [
         {
@@ -1064,9 +1064,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "ai-fraud-email-detection",
     title: "AI Fraud Email Detection System",
-    tagline: "AI-Powered Email Scanner & Threat Dashboard",
-    overview: "A cybersecurity scanning system that parses incoming email payloads, evaluates text tokens for phishing indicators, and maps safety threat assessments on security dashboards.",
-    problem: "Phishing scams damage organizational servers daily. Simple rule-based filters fail to block context-shifted emails that lack known spam keywords but contain manipulative prompts.",
+    tagline: "NLP-based spam and phishing email detector",
+    overview: "An NLP pipeline that processes email text, extracts linguistic features, and classifies emails as spam or phishing attempts using machine learning.",
+    problem: "Simple keyword filters fail to catch phishing emails that use polite or contextually normal language to manipulate users.",
     objectives: [
       "Train classification networks differentiating ham from spam emails.",
       "Perform text sanitization (lemmatization, token extraction) on email payloads.",
@@ -1092,8 +1092,8 @@ export const projectsData: ProjectData[] = [
       "ML models score the token weights to calculate phishing probabilities.",
       "Dashboard flags suspect emails with high-contrast safety warning indicators."
     ],
-    challenges: "Reducing false positive rates that block legitimate operational messages, slowing corporate communication channels.",
-    solutions: "Formulated custom sender trust scores and whitelisting rules that act as secondary overrides for the machine learning classifiers.",
+    challenges: "Avoiding false positives that block normal communication while maintaining high accuracy in identifying phishing attempts.",
+    solutions: "Combined the ML model with sender reputation checks and custom domain filters to override false positive alerts.",
     databaseDesign: {
       tables: [
         {
@@ -1157,9 +1157,9 @@ export const projectsData: ProjectData[] = [
   {
     slug: "anpr-lite",
     title: "ANPR Lite",
-    tagline: "Automated Number Plate Recognition Pipeline",
-    overview: "A computer vision system that captures vehicle camera streams, localizes license plates with bounding boxes, and parses numbers using optical character recognition pipelines.",
-    problem: "Manual parking and toll audits trigger vehicle backlogs and register wrong license plate records due to fast vehicle speeds and varying camera angles.",
+    tagline: "Computer vision vehicle license plate extraction pipeline",
+    overview: "A computer vision pipeline that detects vehicles in camera frames, localizes their license plates using contour analysis, and extracts plate text with OCR.",
+    problem: "Manual recording of license plates at parking gates causes delays and data entry errors, especially in low-light environments.",
     objectives: [
       "Localize vehicle license plates in camera frames using OpenCV algorithms.",
       "Execute character parsing pipelines extracting plate numbers.",
@@ -1185,8 +1185,8 @@ export const projectsData: ProjectData[] = [
       "Tesseract models parse characters from isolated sub-images.",
       "SQLite writes records matching license logs to gate access databases."
     ],
-    challenges: "Parsing license plates under severe angles or when mud obscuring characters from camera viewfinders.",
-    solutions: "Structured image perspective transformations that crop and warp localized plate frames before executing character segmentation routines.",
+    challenges: "Accurately reading characters when license plates are tilted or partially obscured by mud and shadows.",
+    solutions: "Applied image warping techniques to align plate images horizontally before running character segmentation and OCR.",
     databaseDesign: {
       tables: [
         {

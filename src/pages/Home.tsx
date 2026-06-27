@@ -44,7 +44,7 @@ const Home = () => {
                   className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-sky-200/50 bg-sky-50/50 backdrop-blur-md text-sky-900 text-xs font-bold tracking-wide"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse" />
-                  <span>Available For Internships</span>
+                  <span>Active Candidate for Software Engineering Internships</span>
                 </motion.div>
 
                 {/* Monumental Editorial Heading */}
@@ -69,14 +69,14 @@ const Home = () => {
                   className="space-y-4 lg:space-y-6 pt-1 lg:pt-2 border-l-2 border-sky-200 pl-4 lg:pl-6"
                 >
                   <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 leading-[1.15] tracking-tight max-w-2xl text-balance">
-                    Building AI Systems,<br />
-                    Financial Intelligence Platforms,<br />
-                    and Production-Ready Software.
+                    Engineering high-performance software systems,<br />
+                    intelligent data pipelines,<br />
+                    and reliable backend architectures.
                   </h2>
                   
                   {/* Muted Job Titles */}
                   <p className="text-[10px] sm:text-xs font-bold text-gray-400 tracking-[0.18em] uppercase">
-                    Software Developer • AI/ML Engineer • Python Developer
+                    Software Engineer • Focus on AI/ML & Backends
                   </p>
                 </motion.div>
 
@@ -88,7 +88,7 @@ const Home = () => {
                     transition={{ duration: 0.5, delay: 0.15 }}
                     className="text-sm sm:text-base text-gray-500 leading-relaxed text-balance font-medium"
                   >
-                    Computer Science (AI & ML) undergraduate passionate about building scalable software systems, AI-powered applications, and data-driven solutions.
+                    I build web services, design clean database schemas, and develop data pipelines that turn complex inputs into clear, functional outputs.
                   </motion.p>
 
                   {/* Education Block */}
@@ -196,7 +196,7 @@ const Home = () => {
               <h2 className="text-sm font-bold text-sky-600 uppercase tracking-widest mb-4">Portfolio Centerpiece</h2>
               <h3 className="editorial-heading">Featured Work.</h3>
               <p className="editorial-subheading mt-2">
-                Flagship products bridging Artificial Intelligence, agentic orchestration, and systems design.
+                A selection of systems I've built, exploring multi-agent orchestration, predictive models, and database design.
               </p>
             </div>
 

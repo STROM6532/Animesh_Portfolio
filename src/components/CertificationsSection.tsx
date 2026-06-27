@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { X, ExternalLink, Award, FileText, CheckCircle2 } from "lucide-react";
 
 // Dynamically discover all certificates in public/certificates at build-time using Vite glob
-const files = import.meta.glob('/public/certificates/*.{png,pdf}', { eager: true });
+const files = import.meta.glob('/public/certificates/*.{png,jpg,jpeg,webp,pdf}', { eager: true });
 
 const dynamicCertifications = (() => {
   const filePaths = Object.keys(files);
@@ -58,7 +58,7 @@ const dynamicCertifications = (() => {
       pdfPath: ''
     };
 
-    if (ext === 'png') {
+    if (ext && ['png', 'jpg', 'jpeg', 'webp'].includes(ext)) {
       existing.imgPath = resolvedUrl;
     } else if (ext === 'pdf') {
       existing.pdfPath = resolvedUrl;

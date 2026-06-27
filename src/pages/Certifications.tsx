@@ -147,7 +147,7 @@ const getCategoryBadgeStyles = (category: string) => {
 };
 
 // Automatically audit and discover all certificates in public/certificates at build-time using Vite glob
-const files = import.meta.glob('/public/certificates/*.{png,jpg,jpeg,pdf}', { eager: true });
+const files = import.meta.glob('/public/certificates/*.{png,jpg,jpeg,webp,pdf}', { eager: true });
 
 const dynamicCertifications = (() => {
   const filePaths = Object.keys(files);
@@ -207,7 +207,7 @@ const dynamicCertifications = (() => {
       credentialDetails
     };
 
-    if (ext === 'png') {
+    if (ext && ['png', 'jpg', 'jpeg', 'webp'].includes(ext)) {
       existing.imgPath = resolvedUrl;
     } else if (ext === 'pdf') {
       existing.pdfPath = resolvedUrl;
@@ -246,8 +246,8 @@ const Certifications = () => {
             <div className="text-left max-w-4xl">
               <span className="text-xs font-bold text-sky-600 uppercase tracking-widest block mb-4">Credentials</span>
               <h1 className="editorial-heading">Professional <br />Certifications.</h1>
-              <p className="editorial-subheading mt-4">
-                Verified specializations in cloud computing, data science, artificial intelligence, problem solving, and entrepreneurship.
+              <p className="editorial-subheading mt-4 text-balance">
+                Acquiring theoretical foundations to complement hands-on project execution. These certifications verify my training in cloud computing, machine learning, and data analysis.
               </p>
             </div>
           </div>
@@ -256,6 +256,13 @@ const Certifications = () => {
         {/* CERTIFICATIONS GRID */}
         <section className="pb-24">
           <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+            {/* Introductory statement */}
+            <div className="max-w-3xl mb-12 text-left">
+              <p className="text-base text-gray-500 leading-relaxed font-semibold">
+                I believe that solid foundations are critical for building reliable software. I supplement my hands-on coding and project-building with structured training programs and certifications from organizations like Simplilearn, IBM SkillsBuild, and Microsoft. This structured learning helps me stay aligned with industry standards and best practices.
+              </p>
+            </div>
+
             {dynamicCertifications.length === 0 ? (
               <div className="text-center py-16 bg-white/40 border border-white/60 rounded-3xl p-8 max-w-md mx-auto">
                 <Award size={36} className="text-gray-400 mx-auto mb-2" />

@@ -68,9 +68,9 @@ const About = () => {
           <div className="max-w-[1400px] mx-auto px-6 relative z-10">
             <div className="text-left max-w-4xl">
               <span className="text-xs font-bold text-sky-600 uppercase tracking-widest block mb-4">Biography</span>
-              <h1 className="editorial-heading">Shaping Code <br />Into Products.</h1>
+              <h1 className="editorial-heading">Engineering <br />with Purpose.</h1>
               <p className="editorial-subheading mt-4">
-                Personal story, core mission, career goals, and academic timeline of a Software Developer specialized in AI/ML architectures.
+                A look into my background, my approach to solving technical problems, and the experiences that shape my work.
               </p>
             </div>
           </div>
@@ -84,12 +84,12 @@ const About = () => {
               {/* Left Column Biography (7 cols) */}
               <div className="lg:col-span-7 space-y-8 text-left">
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight">Who I Am</h2>
+                  <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight">My Background</h2>
                   <p className="editorial-body">
-                    I am Animesh Sahoo, a Computer Science undergraduate specialized in Artificial Intelligence and Machine Learning. I view programming not merely as writing syntax, but as building intelligent, user-ready systems that solve real-world problems.
+                    I'm a Computer Science undergraduate specializing in Artificial Intelligence and Machine Learning at Brainware University. My interest in software engineering comes from a desire to make complex data readable and useful. I focus on backend architecture, API reliability, and time-series forecasting models.
                   </p>
                   <p className="text-sm sm:text-base text-gray-500 leading-relaxed font-medium">
-                    My engineering journey focuses on bridging the gap between time-series predictive modeling, backend data integrity, and intuitive data visualizations. I blend structural precision with rapid execution cycles to ship projects that perform under real loads.
+                    I enjoy designing applications that handle data cleanly from ingestion to visualization. For me, good software isn't just about code that works—it's about building systems that are readable, maintainable, and designed to scale under real workloads.
                   </p>
                 </div>
 
@@ -98,21 +98,21 @@ const About = () => {
                     <Compass className="text-sky-600" size={20} />
                     <h3 className="text-xs font-bold text-gray-900">My Mission</h3>
                     <p className="text-[10px] text-gray-500 leading-normal">
-                      To design localized and privacy-first intelligence tools that automate redundant analytical tasks.
+                      To build tools that simplify data analysis and make artificial intelligence practical for real-world decision making.
                     </p>
                   </div>
                   <div className="p-5 rounded-2xl bg-white/40 border border-white/60 space-y-2">
                     <Target className="text-sky-600" size={20} />
-                    <h3 className="text-xs font-bold text-gray-900">Career Goals</h3>
+                    <h3 className="text-xs font-bold text-gray-900">Focus Areas</h3>
                     <p className="text-[10px] text-gray-500 leading-normal">
-                      To engineer enterprise-grade machine learning pipelines and scale data schemas in high-volume environments.
+                      To work on complex systems where performance, database optimization, and schema integrity are critical.
                     </p>
                   </div>
                   <div className="p-5 rounded-2xl bg-white/40 border border-white/60 space-y-2">
                     <Shield className="text-sky-600" size={20} />
                     <h3 className="text-xs font-bold text-gray-900">Tech Philosophy</h3>
                     <p className="text-[10px] text-gray-500 leading-normal">
-                      Clean architecture, relational integrity, low-latency API cycles, and human-centric UI layouts.
+                      Maintain a clear separation of concerns, optimize queries early, and write self-documenting code.
                     </p>
                   </div>
                 </div>

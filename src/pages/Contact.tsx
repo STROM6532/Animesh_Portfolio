@@ -109,8 +109,8 @@ const Contact = () => {
             <div className="text-left max-w-4xl">
               <span className="text-xs font-bold text-sky-600 uppercase tracking-widest block mb-4">Get In Touch</span>
               <h1 className="editorial-heading">Let's Build <br />Something Meaningful <br />Together.</h1>
-              <p className="editorial-subheading mt-4">
-                Open to internships, core development, data analytics roles, and creative software collaborations.
+              <p className="editorial-subheading mt-4 text-balance">
+                If you are a recruiter looking for an engineering intern, a developer interested in collaborating, or just want to chat about software, I'd love to hear from you.
               </p>
             </div>
           </div>
@@ -124,9 +124,9 @@ const Contact = () => {
               {/* Left Column info (5 cols) */}
               <div className="lg:col-span-5 text-left space-y-8">
                 <div className="space-y-4">
-                  <h2 className="text-xl font-extrabold text-gray-900 tracking-tight">Direct Channels</h2>
-                  <p className="text-sm text-gray-550 leading-relaxed font-semibold">
-                    Feel free to drop a message through the form or ping me on any of my active profiles. I usually respond within 24 hours.
+                  <h2 className="text-xl font-extrabold text-gray-900 tracking-tight">Get in Touch Directly</h2>
+                  <p className="text-sm text-gray-555 leading-relaxed font-semibold text-balance">
+                    Whether you have an internship opening, a collaboration proposal, or just want to connect, feel free to use the form or reach out through my email or LinkedIn.
                   </p>
                 </div>
 

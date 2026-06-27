@@ -81,8 +81,8 @@ const Skills = () => {
             <div className="text-left max-w-4xl">
               <span className="text-xs font-bold text-sky-600 uppercase tracking-widest block mb-4">Core Competency</span>
               <h1 className="editorial-heading">Technical <br />Skills.</h1>
-              <p className="editorial-subheading mt-4">
-                Eight core technical groups mapping my capabilities across programming languages, software development, databases, and machine learning models.
+              <p className="editorial-subheading mt-4 text-balance">
+                A breakdown of my technical stack, tools, and methodologies. I focus on backend stability, database performance, and practical machine learning implementation.
               </p>
             </div>
           </div>
@@ -91,6 +91,13 @@ const Skills = () => {
         {/* SKILLS GRID INDEX */}
         <section className="pb-24">
           <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+            {/* Introductory statement */}
+            <div className="max-w-3xl mb-12 text-left">
+              <p className="text-base text-gray-500 leading-relaxed font-semibold">
+                My engineering approach is built around using the right tool for the job. While my academic studies focus on Artificial Intelligence and Machine Learning, I spend a significant amount of time building backend services, designing normalized database schemas, and writing clean, object-oriented code. Below are the key areas where I have hands-on project experience.
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
               {skillCategories.map((category, idx) => (
                 <motion.div

@@ -9,17 +9,17 @@ const experiences = [
     role: "Data Analytics Intern",
     company: "Bluestock Fintech",
     duration: "May 2026 – Present",
-    overview: "Engineered an AI-powered financial intelligence model to automate statistical analysis of NIFTY100 index companies. Maintained backend database operations, processed metrics schemas, and deployed executive reporting panels.",
+    overview: "Focused on building data pipelines and analytics dashboards for market analysis. I worked on database optimization, automated metric extraction, and created visualizations to track index performance.",
     responsibilities: [
-      "Designed and deployed enterprise-grade Power BI executive dashboards mapping multi-sector ticker indicators.",
-      "Optimized relational PostgreSQL tables, indexes, and queries to process daily stock listings datasets.",
-      "Implemented ML-based financial anomaly checks filtering out pricing artifacts and data outliers.",
-      "Collaborated with data team leads to formulate normalized schemas for executive index reports."
+      "Developed interactive Power BI dashboards that mapped key financial indicators for NIFTY100 companies.",
+      "Structured relational database tables and indexes in PostgreSQL to handle daily stock market data ingestion.",
+      "Created statistical preprocessing scripts to identify and filter out price outliers and anomalous data points.",
+      "Worked with senior team members to design clean database schemas for recurring performance reports."
     ],
-    impact: "Automated historical stock audits for NIFTY100 indices, reducing weekly query preparation cycles from 12 hours to instant dashboard loads, and accelerating financial reporting speed.",
+    impact: "By automating the ingestion and modeling of historical ticker data, we reduced weekly reporting cycles from 12 hours of manual queries to instant dashboard reloads, providing the team with rapid insight access.",
     achievements: [
-      "Engineered automated Postgres triggers indexing ticker prices with zero daily data loss.",
-      "Built a Power BI executive scorecard displaying compound KPIs with interactive filters."
+      "Wrote automated database triggers to ensure consistent price indexing without data gaps.",
+      "Designed an interactive dashboard scorecard tracking key performance indicators dynamically."
     ],
     tech: ["Financial Analytics", "Power BI", "PostgreSQL", "Python", "Pandas", "KPI Dashboards"],
     visual: (
@@ -57,17 +57,17 @@ const experiences = [
     role: "AI & ML Intern",
     company: "Kodacy × SPACE",
     duration: "Feb 2026 – Mar 2026",
-    overview: "Built time-series forecasting models to predict stock market valuations. Programmed feature engineering scripts, preprocessing routines, and correlation mappings to automate raw datasets validations.",
+    overview: "Researched and built time-series forecasting models for asset valuation. I wrote preprocessing and feature extraction scripts to transform raw stock data into clean inputs for machine learning models.",
     responsibilities: [
-      "Programmed Python time-series regression models mapping pricing paths against historical indices.",
-      "Authored feature engineering scripts extracting rolling moving averages and relative strength variables (RSI).",
-      "Conducted model validation tests, measuring mean absolute errors and standard deviation variances.",
-      "Preprocessed millions of row inputs from CSV documents, cleaning null sectors and verifying price columns."
+      "Developed Python-based time-series regression models to analyze asset trends.",
+      "Wrote scripts to extract features like moving averages and Relative Strength Index (RSI).",
+      "Evaluated model performance using metrics like Mean Absolute Error (MAE) and standard deviation.",
+      "Cleaned and prepared raw historical CSV datasets containing millions of rows by handling null values and formatting inconsistencies."
     ],
-    impact: "Established high-accuracy regression models running time-series stock forecasts, providing concrete valuation indexes for portfolio simulation tests.",
+    impact: "Delivered a time-series forecasting model with a low error margin, enabling the team to simulate different portfolio strategies with consistent historical data.",
     achievements: [
-      "Formulated scikit-learn training routines reaching an MAE value of under 2%.",
-      "Mapped complex correlation metrics across stock sectors in interactive Jupyter Notebook environments."
+      "Trained scikit-learn models that achieved a Mean Absolute Error of less than 2% on test datasets.",
+      "Built correlation matrices to analyze trends across different market sectors."
     ],
     tech: ["Stock Prediction", "Python", "Scikit-learn", "Pandas", "Time-Series Regression", "Jupyter Notebook"],
     visual: (
